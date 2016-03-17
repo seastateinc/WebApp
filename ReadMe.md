@@ -4,7 +4,7 @@ Use the following R-Script to install and run this App on your local machine. Yo
 
 ```R
 if(!require('devtools',quietly=TRUE)) install.packages('devtools')
-devtools::install_github("seastateinc/WebApp")
+devtools::install_github("rstudio/leaflet")
 shiny::runGitHub("seastateinc/WebApp")
 ```
 ---
