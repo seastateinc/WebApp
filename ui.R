@@ -25,16 +25,15 @@ shinyUI(
 		        	#                startview="year"),
 
 		        	sliderInput("inpYear","Year",
-		        	            min=min(dateRange),
-		        	            max=max(dateRange),
-		        	            value=c(min(dateRanage),max(daterange))
-		        	            ),
+		        	            min   = year(dateRange[1]),
+		        	            max   = year(dateRange[2]),
+		        	            value = year(dateRange[1]),
+		        	            step  = 1),
 
-		        	sliderInput("sldr_year","Year",min=min(year(dateRange)),
-		        	            max=max(year(dateRange)),
-		        	            value=min(year(dateRange)),step=1,
-		        	            # timeFormat = "%F",
-		        	            animate=TRUE),
+		        	# sliderInput("sldr_year","Year",min=2008,
+		        	#             max=2016,
+		        	#             value=2008,step=1,
+		        	#             animate=FALSE),
 
 		        	selectInput("inpTripTarget","Trip Target",
 		        	            as.vector(tripTarget),

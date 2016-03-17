@@ -38,7 +38,7 @@ shinyServer(function(input, output, session) {
 		#        Latitude  >= latRng[1] & Latitude  <= latRng[2] &
 		#        Longitude >= lonRng[1] & Longitude <= lonRng[2] )
 
-		yr <- input$sldr_year
+		yr <- input$inpYear
 		tt <- input$inpTripTarget
 		A80 %>% filter(year(HaulDate) %in% yr, TripTarget %in% tt) %>%
 				filter(Latitude  >= latRng[1] & Latitude  <= latRng[2] &
@@ -49,7 +49,7 @@ shinyServer(function(input, output, session) {
 	# that are currently in the map range.
 	observe({
 		# User input
-		yr <- input$sldr_year
+		yr <- input$inpYear
 		tt <- input$inpTripTarget
 		rr <- input$inpVariableRadius 
 
