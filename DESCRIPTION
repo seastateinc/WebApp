@@ -1,0 +1,7 @@
+Title: Amendment 80 Haul Explorer
+License: MIT
+DisplayMode: Normal
+Author: Steve Martell <steve@seastateinc.com>
+AuthorUrl: http://www.rstudio.com/
+Type: Shiny
+Tags: leaflet selectize datatables absolutepanel
