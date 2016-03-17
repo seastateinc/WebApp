@@ -25,10 +25,11 @@ shinyUI(
 		        	#                startview="year"),
 
 		        	sliderInput("inpYear","Year",
-		        	            min   = year(dateRange[1]),
-		        	            max   = year(dateRange[2]),
-		        	            value = year(dateRange[1]),
-		        	            step  = 1),
+		        	            min     = year(dateRange[1]),
+		        	            max     = year(dateRange[2]),
+		        	            value   = year(dateRange[1]),
+		        	            step    = 1,
+		        	            animate = TRUE),
 
 		        	# sliderInput("sldr_year","Year",min=2008,
 		        	#             max=2016,
