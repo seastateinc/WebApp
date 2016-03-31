@@ -18,7 +18,7 @@ shinyServer(function(input, output, session) {
 	# Interactive Leaflet Map
 	output$map <- renderLeaflet({
 		leaflet() %>%
-		setView(lat = 57.79, lng = -152.4, zoom = 5) %>%
+		setView(lat = 57.79, lng = -152.4, zoom = 6) %>%
 		addProviderTiles("Esri.WorldImagery",
 			group = "Esri WI",
 			options = providerTileOptions(noWrap=FALSE)
