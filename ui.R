@@ -1,10 +1,10 @@
 # ui.R
-source("helpers.R")
-library(shiny)
-library(leaflet)
-library(dplyr)
-library(ggplot2)
-library(lubridate)
+# source("helpers.R")
+# library(shiny)
+# library(leaflet)
+# library(dplyr)
+# library(ggplot2)
+# library(lubridate)
 
 varRadius <- c("Halibut CPUE (t/hour)" = "HalibutCPUE")
 dateRange  <- range(ymd(A80$HaulDate))
@@ -33,10 +33,10 @@ shinyUI(
 		        	#                min = min(dateRange), max=max(dateRange),
 		        	#                startview="year"),
 
-		        	sliderInput("inpYear",h5("Year"),
+		        	sliderInput("inpYear","Year",
 		        	            min     = year(dateRange[1]),
 		        	            max     = year(dateRange[2]),
-		        	            value   = year(dateRange),
+		        	            value   = year(dateRange[1]),
 		        	            step    = 1,
 		        	            animate = FALSE),
 
