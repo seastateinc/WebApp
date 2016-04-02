@@ -1,9 +1,13 @@
 # ui.R
+source("helpers.R")
 library(shiny)
 library(leaflet)
 library(dplyr)
 library(ggplot2)
 library(lubridate)
+
+varRadius <- c("Halibut CPUE (t/hour)" = "HalibutCPUE")
+dateRange  <- range(ymd(A80$HaulDate))
 
 shinyUI(
 	fluidPage(
@@ -29,19 +33,19 @@ shinyUI(
 		        	#                min = min(dateRange), max=max(dateRange),
 		        	#                startview="year"),
 
-		        	sliderInput("inpYear","Year",
+		        	sliderInput("inpYear",h5("Year"),
 		        	            min     = year(dateRange[1]),
 		        	            max     = year(dateRange[2]),
-		        	            value   = year(dateRange[1]),
+		        	            value   = year(dateRange),
 		        	            step    = 1,
-		        	            animate = TRUE),
+		        	            animate = FALSE),
 
 		        	# sliderInput("sldr_year","Year",min=2008,
 		        	#             max=2016,
 		        	#             value=2008,step=1,
 		        	#             animate=FALSE),
 
-		        	selectInput("inpTripTarget","Trip Target",
+		        	selectInput("inpTripTarget",h5("Trip Target"),
 		        	            as.vector(tripTarget),
 		        	            selected = "RockSole",
 		        	            multiple=TRUE),

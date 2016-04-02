@@ -1,4 +1,6 @@
 # server.R
+# source("globals.R")
+# source("helpers.R")
 
 library(shiny)
 library(leaflet)
@@ -6,19 +8,20 @@ library(dplyr)
 library(ggplot2)
 library(lubridate)
 
-A80 <- readRDS("data/A80.rds")
-tripTarget <- unique(A80$TripTarget); names(tripTarget)=paste(tripTarget)
-dateRange  <- range(ymd(A80$HaulDate))
-A80 <- A80 %>% mutate(HalibutCPUE=PreMortalityPacificHalibutWt/Duration)
-varRadius <- c("Halibut CPUE (t/hour)" = "HalibutCPUE")
+# A80 <- readRDS("data/A80.rds")
+# tripTarget <- unique(A80$TripTarget); names(tripTarget)=paste(tripTarget)
+# dateRange  <- range(ymd(A80$HaulDate))
+# A80 <- A80 %>% mutate(HalibutCPUE=PreMortalityPacificHalibutWt/Duration)
+# varRadius <- c("Halibut CPUE (t/hour)" = "HalibutCPUE")
 
 
 shinyServer(function(input, output, session) {
 
 	# Interactive Leaflet Map
+	# Dutch Harbor 53.890558, -166.542114
 	output$map <- renderLeaflet({
 		leaflet() %>%
-		setView(lat = 57.79, lng = -152.4, zoom = 6) %>%
+		setView(lat = 53.89, lng = -166.54, zoom = 5) %>%
 		addProviderTiles("Esri.WorldImagery",
 			group = "Esri WI",
 			options = providerTileOptions(noWrap=FALSE)
